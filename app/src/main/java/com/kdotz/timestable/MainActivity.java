@@ -21,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final SeekBar sk = (SeekBar) findViewById(R.id.seekBar);
-        sk.setMax(20);
-        sk.setProgress(10);
+        int max = 20;
+        int startingPos = 10;
+        sk.setMax(max);
+        sk.setProgress(startingPos);
+        timesTable(startingPos);
 
         sk.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = findViewById(R.id.listView);
         List<Integer> values = new ArrayList<>();
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 100; i++) {
             values.add(value * i);
         }
 
